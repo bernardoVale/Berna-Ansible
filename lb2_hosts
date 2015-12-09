@@ -15,4 +15,6 @@ dominob.lb2.com.br ansible_ssh_host=10.200.0.61 ansible_ssh_user=root
 10.200.0.103 ansible_ssh_user=root
 10.200.0.106 ansible_ssh_user=root
 10.200.0.126 ansible_ssh_user=root
+
+[puppet]
 10.200.0.105 ansible_ssh_user=root

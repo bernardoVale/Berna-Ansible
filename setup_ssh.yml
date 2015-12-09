@@ -1,5 +1,6 @@
 - hosts: all
   sudo: yes
+  gather_facts: False
   remote_user: root
   
   tasks:
@@ -16,10 +17,10 @@
       copy: src=~/.ssh/id_dsa.pub dest=/root/.ssh/authorized_keys owner=root mode=0600
       when: rsa|failed
 
-    - name: Checks if resolver is working properly (issues with some VBox/Host OS combinations)
+    - name: Verificar se o resolver esta funcionando
       command: host -t A ansible.cc
       register: ns
       ignore_errors: yes
 
-    - name: Final greeting
-      pause: prompt="Tudo no lugar onde deveria [Enter]"
+    - name: FIM
+      pause: prompt="Se esta vendo essa mensagem e porque tudo esta no lugar onde deveria [Enter]"
