@@ -1,0 +1,25 @@
+- hosts: all
+  sudo: yes
+  remote_user: root
+  
+  tasks:
+
+    - name: Cria o diretorio .ssh se inexistente
+      file: state=directory mode=0700 dest=/root/.ssh/
+      
+    - name: Adiciona a minha chave publica rsa no usuario root (Se essa etapa falhar não tem problema desde que voce tenha uma chave dsa)
+      copy: src=~/.ssh/id_rsa.pub dest=/root/.ssh/authorized_keys owner=root mode=0600
+      register: rsa
+      ignore_errors: yes
+
+    - name: Adiciona a minha chave publica dsa no usuario root
+      copy: src=~/.ssh/id_dsa.pub dest=/root/.ssh/authorized_keys owner=root mode=0600
+      when: rsa|failed
+
+    - name: Checks if resolver is working properly (issues with some VBox/Host OS combinations)
+      command: host -t A ansible.cc
+      register: ns
+      ignore_errors: yes
+
+    - name: Final greeting
+      pause: prompt="Tudo no lugar onde deveria [Enter]"

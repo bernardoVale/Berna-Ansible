@@ -1,0 +1,18 @@
+[lb2-prod]
+EyeOfSauron.lb2.com.br ansible_ssh_host=10.200.0.114 ansible_ssh_user=root
+LB2-NagiosXI.lb2.com.br ansible_ssh_host=10.200.0.113 ansible_ssh_user=root
+LB2-Producao.lb2.com.br ansible_ssh_host=10.200.0.213 ansible_ssh_user=root
+lb2-totvsapp.lb2.com.br ansible_ssh_host=10.200.0.125 ansible_ssh_user=root
+SVProdApp.lb2.com.br ansible_ssh_host=10.200.0.98 ansible_ssh_user=root
+lb2-prd.lb2.com.br ansible_ssh_host=10.200.0.104 ansible_ssh_user=root
+SVDevApp.lb2.com.br ansible_ssh_host=10.200.0.62 ansible_ssh_user=root
+clm-db.lb2.com.br ansible_ssh_host=10.200.0.96 ansible_ssh_user=root
+clm.lb2.com.br ansible_ssh_host=10.200.0.96 ansible_ssh_user=root
+dominoa.lb2.com.br ansible_ssh_host=10.200.0.60 ansible_ssh_user=root
+dominob.lb2.com.br ansible_ssh_host=10.200.0.61 ansible_ssh_user=root
+
+[lb2-pocs]
+10.200.0.103 ansible_ssh_user=root
+10.200.0.106 ansible_ssh_user=root
+10.200.0.126 ansible_ssh_user=root
+10.200.0.105 ansible_ssh_user=root
